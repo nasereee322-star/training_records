@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#17242e"/>
+  <rect x="10" y="10" width="44" height="44" rx="5" fill="none" stroke="#b4441c" stroke-width="4" transform="rotate(-4 32 32)"/>
+  <text x="32" y="41" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#b4441c" text-anchor="middle">TR</text>
+</svg>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registry — Training Records Bureau</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-stamp">
+          <span class="brand-stamp-letters">TR</span>
+        </div>
+        <div class="brand-text">
+          <h1>Registry</h1>
+          <p>Training Records Bureau</p>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#/dashboard" class="nav-item" data-view="dashboard">
+          <span class="nav-num">01</span><span class="nav-label">Dashboard</span>
+        </a>
+        <a href="#/employees" class="nav-item" data-view="employees">
+          <span class="nav-num">02</span><span class="nav-label">Employees</span>
+        </a>
+        <a href="#/records" class="nav-item" data-view="records">
+          <span class="nav-num">03</span><span class="nav-label">Training Records</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <p class="form-no">FORM TR-52 · REV 03</p>
+        <div class="foot-actions">
+          <button class="btn btn-ghost btn-sm" id="btn-export-json" title="Export all data as JSON">Export JSON</button>
+          <button class="btn btn-ghost btn-sm" id="btn-export-csv" title="Export records as CSV">Export CSV</button>
+          <button class="btn btn-ghost btn-sm" id="btn-import" title="Import JSON data">Import</button>
+          <input type="file" id="import-file" accept="application/json" hidden />
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-title">
+          <h2 id="page-title">Dashboard</h2>
+          <p id="page-subtitle">Ledger of certifications &amp; training</p>
+        </div>
+        <div class="topbar-actions">
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+            </svg>
+            <input id="global-search" type="search" placeholder="Search the ledger…" autocomplete="off" />
+          </div>
+          <button class="btn btn-primary" id="btn-new-record">+ File a Record</button>
+        </div>
+      </header>
+
+      <section id="view-dashboard" class="view"></section>
+      <section id="view-employees" class="view"></section>
+      <section id="view-records" class="view"></section>
+    </main>
+  </div>
+
+  <!-- ============ MODAL ROOT ============ -->
+  <div id="modal-root"></div>
+
+  <!-- ============ TOAST ============ -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/seed.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
